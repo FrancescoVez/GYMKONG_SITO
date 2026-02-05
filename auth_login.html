@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Login - GymKong{% endblock %}
+{% block content %}
+
+<section class="gk-auth">
+  <div class="gk-card gk-card--glow">
+    <div class="gk-card__top">
+      <h1 class="gk-title">Ehi, bentornato</h1>
+      <p class="gk-subtitle">Accedi al tuo account GymKong.</p>
+    </div>
+
+    <form method="post" class="gk-form">
+      {{ form.hidden_tag() }}
+
+      <label class="gk-label">Email</label>
+      {{ form.email(class_="gk-input", placeholder="you@esempio.com") }}
+
+      <label class="gk-label">Password</label>
+      {{ form.password(class_="gk-input", placeholder="••••••••") }}
+
+      <button type="submit" class="gk-btn gk-btn--gold gk-btn--full">Login</button>
+    </form>
+
+    <div class="gk-divider"><span></span></div>
+
+    <p class="gk-muted">
+      Non hai un account?
+      <a class="gk-link" href="{{ url_for('register') }}">Registrati</a>
+    </p>
+  </div>
+</section>
+
+{% endblock %}
