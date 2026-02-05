@@ -78,7 +78,7 @@ The UI is designed to match the GymKong identity and the app is structured to be
 
 # 1) Clone the repository
 
-2) Create a virtual environment (recommended)
+#2) Create a virtual environment (recommended)
 python -m venv .venv
 
 
@@ -93,7 +93,7 @@ macOS / Linux
 
 source .venv/bin/activate
 
-3) Install dependencies
+#3) Install dependencies
 pip install -r requirements.txt
 
 
@@ -101,7 +101,7 @@ If you don’t have a requirements.txt yet, you can generate it after installing
 
 pip freeze > requirements.txt
 
-4) Create the .env file
+#4) Create the .env file
 
 Create a file named .env in the project root:
 
@@ -114,7 +114,7 @@ SECRET_KEY=gymkong-super-secret-key-change-in-production
 # Database (coherent with app.py: reads DATABASE_URL)
 DATABASE_URL=sqlite:///site.db
 
-5) Run the application
+#5) Run the application
 python app.py
 
 
@@ -123,7 +123,7 @@ Then open:
 http://127.0.0.1:5000
 
 
-Database Notes
+#Database Notes
 
 The SQLite database file is typically created at:
 
@@ -133,7 +133,7 @@ or in the project root ./site.db (depending on config)
 
 If you want to reset the database locally, stop the server and delete site.db (wherever it is created), then run the app again.
 
-Admin Access
+#Admin Access
 
 The project includes an admin panel protected by login and admin checks.
 Depending on your final implementation, you may have:
@@ -144,7 +144,7 @@ or admin users created manually via database/admin form
 
 Make sure to change default credentials before production deployment.
 
-Presentation
+#Presentation
 
 Course slides (e-learning): https://elearning.uniparthenope.it/course/view.php?id=121
 
@@ -152,7 +152,7 @@ Google Drive folder: https://drive.google.com/drive/folders/13hiYKp-IJMY78Nhs6Ps
 
 GitHub repository: https://github.com/informatica-uniparthenope/TW6
 
-Resources Used
+#Resources Used
 
 Miguel Grinberg — Flask Mega Tutorial
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
@@ -163,7 +163,7 @@ https://aaronluna.dev/series/flask-api-tutorial/overview/
 W3Schools
 https://w3schools.com
 
-Authors / Developers
+#Authors / Developers
 
 Domenico Paduano — Matricola 2989
 
