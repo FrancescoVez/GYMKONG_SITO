@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}Planning - GymKong{% endblock %}
+
+{% block content %}
+
+<section class="page-title-hero">
+ <h1>Planning Lezioni</h1>
+ <p>Organizza i tuoi allenamenti nella giungla GymKong.</p>
+</section>
+
+<!-- ============================
+     PLANNING IMMAGINE SCARICABILE
+============================= -->
+<section class="section">
+
+    <h2>Planning settimanale</h2>
+    <p class="section-intro">Scarica l’immagine ufficiale del planning.</p>
+
+    <img src="{{ url_for('static', filename='img/planning.png') }}"
+         class="planning-full"
+         alt="Planning GymKong">
+
+    <div style="text-align:center; margin-top:25px;">
+        <a href="{{ url_for('static', filename='img/planning.png') }}"
+           download
+           class="btn-main">
+            Scarica il Planning
+        </a>
+    </div>
+
+</section>
+
+<!-- ============================
+     SEZIONE APP GYMKONG
+============================= -->
+<section class="section app-section">
+    <div class="app-grid">
+
+        <div class="app-phone">
+            <img src="https://gorawellness.it/wp-content/uploads/2024/09/iphone-14-pro-mockup-on-stone-panel-v3-isometric-copia-2-light-copia-600x600.png"
+                 alt="App GymKong">
+        </div>
+
+        <div class="app-text">
+            <h2>Prenota l’accesso alla struttura<br>
+                e le tue attività utilizzando<br>
+                <strong>l’APP GymKong</strong>
+            </h2>
+
+            <div class="store-buttons">
+                <a href="#" class="store-btn">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/03/App-Store-Logo-2020.png" class="icon">
+                    App Store
+                </a>
+
+                <a href="#" class="store-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" class="icon">
+                    Google Play
+                </a>
+            </div>
+
+            <div class="techno-logo">
+                <img src="https://gorawellness.it/wp-content/uploads/2021/09/logo-technogym-colorigrande-300x228.png"
+                     alt="Technogym">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================
+     SEZIONE REGOLAMENTO APP
+============================= -->
+<section class="section app-rules">
+
+    <div class="rules-grid">
+
+        <div class="rule-box">
+            <img src="https://gorawellness.it/wp-content/uploads/2021/05/pagina-planning_icona-1-300x300.png" class="rule-icon">
+            <p><strong>Crea un account</strong><br>per accedere all'app.</p>
+        </div>
+
+        <div class="rule-box">
+            <img src="https://gorawellness.it/wp-content/uploads/2021/05/pagina-planning_icona-3-300x300.png" class="rule-icon">
+            <p><strong>Prenota la tua attività</strong><br>per sala, corsi e spa.</p>
+        </div>
+
+        <div class="rule-box">
+            <img src="https://gorawellness.it/wp-content/uploads/2021/12/pagina-planning_icona-5-copia-300x300.png" class="rule-icon">
+            <p>Prenota fino a <strong>6 attività</strong> al giorno.</p>
+        </div>
+
+        <div class="rule-box">
+            <img src="https://gorawellness.it/wp-content/uploads/2021/05/pagina-planning_icona-4-300x300.png" class="rule-icon">
+            <p><strong>Rispetta gli orari</strong> di ingresso e uscita.</p>
+        </div>
+
+        <div class="rule-box">
+            <img src="https://gorawellness.it/wp-content/uploads/2021/12/pagina-planning_icona-5-copia-300x300.png" class="rule-icon">
+            <p>Puoi disdire entro <strong>1 ora</strong> dall’inizio.</p>
+        </div>
+
+        <div class="rule-box">
+            <img src="https://gorawellness.it/wp-content/uploads/2021/05/pagina-planning_icona-6-300x300.png" class="rule-icon">
+            <p>Per altre info contatta la reception.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================
+     FOOTER
+============================= -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-inner">
+
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>GymKong</h4>
+                    <p>Premium Fitness Club</p>
+                    <p>Via della Forza 99<br>Milano (MI)</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Orari</h4>
+                    <ul>
+                        <li>Lun - Ven: 6.30 - 23.00</li>
+                        <li>Sab: 7.00 - 18.00</li>
+                        <li>Dom: 8.00 - 14.00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li>Email: info@gymkong.it</li>
+                        <li>Telefono: +39 320 555 8899</li>
+                        <li>WhatsApp: +39 320 555 8899</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2025 GymKong</div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
