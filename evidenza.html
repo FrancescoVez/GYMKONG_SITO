@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}GymKong - In Evidenza{% endblock %}
+
+{% block content %}
+
+<!-- ============================
+     HERO PAGINA
+============================= -->
+<section class="page-title-hero">
+    <h1>In Evidenza</h1>
+    <p>Promozioni, offerte e novità dal mondo GymKong</p>
+</section>
+
+<!-- ============================
+     PIANI DI ABBONAMENTO (SOPRA)
+============================= -->
+<section class="section">
+    <h2>Piani di abbonamento</h2>
+
+    <div class="promo-wrap">
+
+        <div class="promo-card">
+            <h3>Piano Mensile</h3>
+            <p class="price">€49/mese</p>
+            <p>Allenati senza vincoli con accesso completo alla struttura.</p>
+        </div>
+
+        <div class="promo-card highlight">
+            <h3>Piano Trimestrale</h3>
+            <p class="price">€129</p>
+            <p>Risparmia e continua il tuo percorso con la Tribù GymKong.</p>
+        </div>
+
+        <div class="promo-card">
+            <h3>Piano Annuale</h3>
+            <p class="price">€399</p>
+            <p>La scelta più conveniente: un anno intero di allenamenti.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================
+     PROMO (SOTTO)
+============================= -->
+<section class="section">
+    <h2>Promo attive</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Promo di Benvenuto</h3>
+            <p>Iscriviti ora e ricevi subito uno sconto esclusivo sul primo mese.</p>
+        </div>
+
+        <div class="card">
+            <h3>Promo Student</h3>
+            <p>Tariffe dedicate agli studenti per allenarsi senza pensieri.</p>
+        </div>
+
+        <div class="card">
+            <h3>Promo Team</h3>
+            <p>Allenati con gli amici e accedi a vantaggi dedicati ai gruppi.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================
+     MINI SHOP GYMKONG
+============================= -->
+<section class="section mini-shop">
+
+    <h2>Shop GymKong</h2>
+    <p class="section-intro">
+        Accessori e prodotti ufficiali GymKong, disponibili in reception.
+    </p>
+
+    <div class="mini-shop-grid">
+
+        <div class="mini-item">
+            <img src="{{ url_for('static', filename='img/zaino.png') }}" alt="Zaino GymKong">
+            <h3>Zaino GymKong</h3>
+            <p>Capiente, resistente, stile urban-training.</p>
+        </div>
+
+        <div class="mini-item">
+            <img src="{{ url_for('static', filename='img/telo.png') }}" alt="Telo palestra">
+            <h3>Telo Palestra</h3>
+            <p>Assorbente e compatto, perfetto per sala e corsi.</p>
+        </div>
+
+        <div class="mini-item">
+            <img src="{{ url_for('static', filename='img/lucchetto.png') }}" alt="Lucchetto">
+            <h3>Lucchetto</h3>
+            <p>Sicuro e pratico per armadietti GymKong.</p>
+        </div>
+
+        <div class="mini-item">
+            <img src="{{ url_for('static', filename='img/orologio.png') }}" alt="Bracciale accesso">
+            <h3>Bracciale Accesso</h3>
+            <p>Accesso rapido ai tornelli della struttura.</p>
+        </div>
+
+        <div class="mini-item">
+            <img src="{{ url_for('static', filename='img/borraccia.png') }}" alt="Borraccia GymKong">
+            <h3>Borraccia</h3>
+            <p>Idratazione sempre con te, BPA free.</p>
+        </div>
+
+        <div class="mini-item">
+            <img src="{{ url_for('static', filename='img/integratori.png') }}" alt="Integratori GymKong">
+            <h3>Integratori GymKong</h3>
+            <p>Energia, recupero e performance.</p>
+        </div>
+
+    </div>
+
+    <div class="mini-shop-cta">
+        <p class="muted">
+            Per prezzi e disponibilità rivolgiti alla reception GymKong.
+        </p>
+        <a href="{{ url_for('contatti') }}" class="btn-main">Chiedi informazioni</a>
+    </div>
+
+</section>
+
+<!-- FOOTER  -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-inner">
+
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h4>GymKong</h4>
+                    <p>Premium Fitness Club</p>
+                    <p>Via della Forza 99<br>Milano (MI)</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Orari</h4>
+                    <ul>
+                        <li>Lun - Ven: 6.30 - 23.00</li>
+                        <li>Sab: 7.00 - 18.00</li>
+                        <li>Dom: 8.00 - 14.00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li>Email: info@gymkong.it</li>
+                        <li>Telefono: +39 320 555 8899</li>
+                        <li>WhatsApp: +39 320 555 8899</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2025 GymKong</div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
