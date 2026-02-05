@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}GymKong{% endblock %}</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="gk-header">
+    <nav class="nav-menu">
+      <a href="{{ url_for('index') }}" class="{% if active_page=='home' %}active{% endif %}">Home</a>
+      <a href="{{ url_for('corsi') }}" class="{% if active_page=='corsi' %}active{% endif %}">Corsi</a>
+      <a href="{{ url_for('planning') }}" class="{% if active_page=='planning' %}active{% endif %}">Planning</a>
+    </nav>
+
+    <!-- LOGO + DROPDOWN  -->
+    <div class="logo gk-logo-wrap" id="gkLogoWrap">
+      <button class="gk-logo-btn" id="gkLogoBtn" type="button" aria-haspopup="true" aria-expanded="false">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="GymKong">
+      </button>
+
+      <div class="gk-logo-panel" id="gkLogoPanel" aria-hidden="true">
+        <!-- FLASH-->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="gk-panel-toasts">
+              {% for category, message in messages %}
+                <div class="gk-toast gk-toast--{{ category }}">
+                  <span class="gk-toast__dot"></span>
+                  <span class="gk-toast__text">{{ message }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        {% if current_user.is_authenticated %}
+          <div class="gk-panel-head">
+            <div class="gk-panel-hello">
+              Ciao, <strong>{{ current_user.username or current_user.email }}</strong>
+            </div>
+
+            <div class="gk-panel-actions">
+              {% if current_user.is_admin %}
+                <a class="gk-panel-btn gk-panel-btn--gold" href="{{ url_for('admin_users') }}">Database</a>
+              {% endif %}
+              <a class="gk-panel-btn" href="{{ url_for('logout') }}">Logout</a>
+            </div>
+          </div>
+        {% else %}
+          <div class="gk-panel-head">
+            <div class="gk-panel-hello">
+              Accedi o registrati per entrare nella Tribù.
+            </div>
+
+            <div class="gk-panel-actions">
+              <a class="gk-panel-btn" href="{{ url_for('login') }}">Login</a>
+              <a class="gk-panel-btn gk-panel-btn--gold" href="{{ url_for('register') }}">Register</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="{{ url_for('centro') }}" class="{% if active_page=='centro' %}active{% endif %}">Il Centro</a>
+      <a href="{{ url_for('tribu') }}" class="{% if active_page=='tribu' %}active{% endif %}">La Tribù</a>
+      <a href="{{ url_for('evidenza') }}" class="{% if active_page=='evidenza' %}active{% endif %}">In Evidenza</a>
+      <a href="{{ url_for('contatti') }}" class="{% if active_page=='contatti' %}active{% endif %}">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <script>
+    (function () {
+      const wrap = document.getElementById("gkLogoWrap");
+      const btn  = document.getElementById("gkLogoBtn");
+      const panel= document.getElementById("gkLogoPanel");
+
+      function openPanel() {
+        wrap.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+        panel.setAttribute("aria-hidden", "false");
+      }
+
+      function closePanel() {
+        wrap.classList.remove("is-open");
+        btn.setAttribute("aria-expanded", "false");
+        panel.setAttribute("aria-hidden", "true");
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (wrap.classList.contains("is-open")) closePanel();
+        else openPanel();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!wrap.contains(e.target)) closePanel();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePanel();
+      });
+    })();
+  </script>
+
+</body>
+</html>
